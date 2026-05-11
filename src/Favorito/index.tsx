@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 function Favorito() {
   const [favorites, setFavorites] = useState<any[]>([]);
 
-  // cargar favoritos
+  // cargar favoritos para que que se actualize la lista
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("favorites") || "[]");
     setFavorites(stored);
   }, []);
 
+//elmina los favoritos con el id q tenga
   const toggleFavorite = (id: number) => {
     let stored = JSON.parse(localStorage.getItem("favorites") || "[]");
 
